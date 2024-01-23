@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/css/styles.css}"/>
+</head>
+<body>
+<a href="/">
+    <img class="mainImg" src="https://bootcamp.javastart.pl/img/javastart-logo.png"/>
+</a>
+<div class="mainPage">
+<h2>Formularz rejestracyjny</h2>
+
+<form th:action="@{/rejestracja}" th:object="${user}" method="POST">
+    <label>Email: <input type="email" th:field="*{email}" /></label><br/>
+    <label>Hasło: <input type="password" th:field="*{password}" /></label><br/>
+    <button type="submit">Register</button>
+</form>
+
+<div th:if="${registrationSuccess}">
+    <p style="color: green;">Udało się utworzyć konto!</p>
+    <p></p>
+    <a href="login.html">Zaloguj się</a>
+</div>
+
+<div th:if="${registrationError}">
+    <p style="color: red;">Rejestracja nieudana, spróbuj ponownie.</p>
+</div>
+</div>
+</body>
+</html>
