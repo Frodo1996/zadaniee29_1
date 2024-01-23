@@ -1,0 +1,18 @@
+.mainPage {
+    font-family: Arial, sans-serif;
+    background-color: coral;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.mainImg {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: auto;
+}

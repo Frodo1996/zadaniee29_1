@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona dla zaglowanych</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../static/css/styles.css}"/>
+</head>
+<body>
+<a href="/">
+    <img class="mainImg" src="https://bootcamp.javastart.pl/img/javastart-logo.png"/>
+</a>
+<div class="mainPage">
+<h1>Strona dla zalogowanych</h1>
+
+<div th:if="${#request.isUserInRole('ADMIN')}">
+    <a href="admin">Wejdź do panelu administratora</a>
+</div>
+
+<div th:if="${#request.isUserInRole('USER')}">
+    <a href="user">Wejdź do panelu użytkownika</a>
+</div>
+
+<a href="/logout">Wyloguj</a>
+</div>
+</body>
+</html>
